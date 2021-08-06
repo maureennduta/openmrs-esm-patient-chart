@@ -38,3 +38,20 @@
   background-color: $ui-background;
   position: relative;
 }
+
+.toggle {
+  border:1px solid lightblue;
+}
+
+.toggle * {
+  fill: black;
+}
+
+.activeButton {
+  background-color: lightblue;
+  border:1px solid blue;
+}
+
+.activeButton *{
+  fill: blue;
+}

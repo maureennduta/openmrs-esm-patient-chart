@@ -83,23 +83,23 @@ const RenderVitals: React.FC<RenderVitalsProps> = ({
           <h4 className={`${styles.productiveHeading03} ${styles.text02}`}>{headerTitle}</h4>
           <div className={styles.toggleButtons}>
             <Button
-              className={styles.toggle}
+              className={`${styles.toggle} ${!chartView && styles.activeButton}`}
               size="field"
-              kind={chartView ? 'ghost' : 'secondary'}
+              kind="ghost"
               hasIconOnly
-              renderIcon={Table16}
               iconDescription={t('tableView', 'Table View')}
-              onClick={() => setChartView(false)}
-            />
+              onClick={() => setChartView(false)}>
+              <Table16 />
+            </Button>
             <Button
-              className={styles.toggle}
+              className={`${styles.toggle} ${chartView && styles.activeButton}`}
               size="field"
-              kind={chartView ? 'secondary' : 'ghost'}
+              kind="ghost"
               hasIconOnly
-              renderIcon={ChartLineSmooth16}
               iconDescription={t('chartView', 'Chart View')}
-              onClick={() => setChartView(true)}
-            />
+              onClick={() => setChartView(true)}>
+              <ChartLineSmooth16 />
+            </Button>
           </div>
           {showAddVitals && (
             <Button kind="ghost" renderIcon={Add16} iconDescription="Add vitals" onClick={launchVitalsBiometricsForm}>
